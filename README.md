@@ -25,11 +25,11 @@ Simple model creation attached to a behavior:
 
 ```php
 <?php
-//app/models/Post.php
+//app/models/Posts.php
 namespace app\models;
 
-class Post extends \li3_behaviors\data\model\Behaviorable {
-    var $actsAs = array('Slug' => array(
+class Posts extends \li3_behaviors\data\model\Behaviorable {
+    protected $_actsAs = array('Slug' => array(
 		'fields' => array('title' => 'title', 'name' => 'slug')
 	));
 }
