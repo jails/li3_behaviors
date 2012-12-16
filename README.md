@@ -6,7 +6,7 @@ Checkout the code to either of your library directories:
 
 ```
 cd libraries
-git clone git@github.com:UnionOfRAD/li3_behaviors.git
+git clone git@github.com:jails/li3_behaviors.git
 ```
 
 Include the library in your `/app/config/bootstrap/libraries.php`
