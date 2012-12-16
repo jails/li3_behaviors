@@ -64,7 +64,7 @@ class Slug extends \li3_behaviors\data\model\Behavior {
 		}
 	}
 
-	protected function _slug() {
+	protected function _slug() {
 		extract($this->_config);
 		foreach ($fields as $from => $to) {
 			if (isset($params['data'][$from])) {
