@@ -75,3 +75,10 @@ class Slug extends \li3_behaviors\data\model\Behavior {
 }
 ?>
 ```
+
+## Greetings
+
+The li3 team, Nateabele's filters system and all others which make that possible (including my parents which I love very much of course).
+
+## Build status
+[![Build Status](https://secure.travis-ci.org/jails/li3_behaviors.png?branch=master)](http://travis-ci.org/jails/li3_behaviors)
