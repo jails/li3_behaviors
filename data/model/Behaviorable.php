@@ -16,7 +16,6 @@ class Behaviorable extends \lithium\data\Model {
 	/**
 	 * List of behaviors to load
 	 *
-	 * @see lithium\data\Model::actsAs()
 	 * @var array
 	 */
 	protected $_actsAs = array();
@@ -144,3 +143,5 @@ class Behaviorable extends \lithium\data\Model {
 		return false;
 	}
 }
+
+?>
