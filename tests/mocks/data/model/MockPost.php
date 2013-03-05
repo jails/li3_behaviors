@@ -9,8 +9,12 @@
 namespace li3_behaviors\tests\mocks\data\model;
 
 use lithium\tests\mocks\data\model\MockDatabase;
+use li3_behaviors\data\model\Behaviors;
 
-class MockPost extends \li3_behaviors\data\model\Behaviorable {
+class MockPost extends \lithium\data\Model {
+	use Behaviors;
+
+	protected $_actsAs = array();
 
 	public static $connection = null;
 

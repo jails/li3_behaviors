@@ -11,21 +11,20 @@ namespace li3_behaviors\data\model;
 use lithium\core\Libraries;
 use RuntimeException;
 
-class Behaviorable extends \lithium\data\Model {
+/**
+ * Behaviors for the Model class
+ *
+ * Define all behaviors using `protected $_actsAs;` in your model class.
+ */
 
-	/**
-	 * List of behaviors to load
-	 *
-	 * @var array
-	 */
-	protected $_actsAs = array();
+trait Behaviors {
 	/**
 	 * Store all loaded behaviors
 	 *
 	 * @see Model::_actsAs
 	 * @var array
 	 */
-	protected $_behaviors = array();
+	protected $_behaviors = [];
 
 	/**
 	 * Boolean indicates if the `Model::_init()` has been launched at the initialization step.
@@ -51,15 +50,18 @@ class Behaviorable extends \lithium\data\Model {
 	 *
 	 * Example to disable the `_init()` call use the following before any access to the model:
 	 * {{{
-	 * Posts::config(array('init' => false));
+	 * Posts::config(['init' => false]);
 	 * }}}
 	 */
 	protected function _init() {
 		$self = static::_object();
+		if (!isset($self->_actsAs)) {
+			$self->_actsAs = [];
+		}
 		foreach ($self->_actsAs as $name => $config) {
 			if (is_string($config)) {
 				$name = $config;
-				$config = array();
+				$config = [];
 			}
 			static::actsAs($name, $config);
 		}
@@ -78,7 +80,7 @@ class Behaviorable extends \lithium\data\Model {
 			if(method_exists($class, $method)) {
 				$model = get_called_class();
 				array_unshift($params, $model);
-				return call_user_func_array(array($class, $method), $params);
+				return call_user_func_array([$class, $method], $params);
 			}
 		}
 		return parent::__callStatic($method, $params);
@@ -113,7 +115,7 @@ class Behaviorable extends \lithium\data\Model {
 	 *               (this parameter is only applicable if `$config === true`)
 	 * @return boolean `true` on success, `false` otherwise
 	 */
-	public static function actsAs($name, $config = array(), $entry = null) {
+	public static function actsAs($name, $config = [], $entry = null) {
 		$self = static::_object();
 
 		$class = Libraries::locate('behavior', $name);
