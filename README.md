@@ -31,11 +31,14 @@ Simple model creation attached to a behavior:
 <?php
 //app/models/Posts.php
 namespace app\models;
+use li3_behaviors\data\model\Behaviors;
 
-class Posts extends \li3_behaviors\data\model\Behaviorable {
-    protected $_actsAs = array('Slug' => array(
-		'fields' => array('title' => 'title', 'name' => 'slug')
-	));
+class Posts extends \lithium\data\Model {
+    use Behaviors;
+
+    protected $_actsAs = ['Slug' => [
+        'fields' => ['title' => 'title', 'name' => 'slug']
+    ]];
 }
 ?>
 ```
@@ -55,7 +58,7 @@ class Slug extends \li3_behaviors\data\model\Behavior {
 	 * @var array
 	 */
 	protected $_defaults = array(
-		'fields' => array('label' => 'slug')
+		'fields' => ['label' => 'slug']
 	);
 
 	protected function _init() {
