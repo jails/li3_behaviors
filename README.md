@@ -2,6 +2,14 @@
 
 ## Installation
 
+This is forked from [jails/li3_behaviors](https://github.com/jails/li3_behaviors)
+
+You can find synced repo at `master` branch
+
+And PHP 5.3 compatible port at `php-5.3` branch (default branch of this fork)
+
+---
+
 Checkout the code to either of your library directories:
 
 ```
