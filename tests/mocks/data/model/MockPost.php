@@ -14,11 +14,11 @@ use li3_behaviors\data\model\Behaviors;
 class MockPost extends \lithium\data\Model {
 	use Behaviors;
 
-	protected $_actsAs = array();
+	protected $_actsAs = [];
 
 	public static $connection = null;
 
-	protected $_meta = array('connection' => false, 'key' => 'id');
+	protected $_meta = ['connection' => false, 'key' => 'id'];
 
 	public static function instances() {
 		return array_keys(static::$_instances);

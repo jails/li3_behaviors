@@ -18,30 +18,30 @@ class BehaviorableTest extends \lithium\test\Unit {
 
 	public function testActsAs() {
 		$model = 'li3_behaviors\tests\mocks\data\behavior\MockFlyBehavior';
-		MockPost::actsAs($model, array('param1' => 'value1'));
+		MockPost::actsAs($model, ['param1' => 'value1']);
 
-		$expected = array(
+		$expected = [
 			'param1' => 'value1',
 			'model' => 'li3_behaviors\tests\mocks\data\model\MockPost',
 			'init' => true,
-		);
+		];
 		$this->assertEqual($expected, MockPost::actsAs($model, true));
 		$this->assertEqual('value1', MockPost::actsAs($model, true, 'param1'));
 
-		MockPost::actsAs($model, array('param2' => 'value2'));
+		MockPost::actsAs($model, ['param2' => 'value2']);
 		$expected['param2'] = 'value2';
 		$this->assertEqual($expected, MockPost::actsAs($model, true));
 	}
 
 	public function testCallStatic() {
 		$model = 'li3_behaviors\tests\mocks\data\behavior\MockFlyBehavior';
-		MockPost::actsAs($model, array('param1' => 'value1'));
+		MockPost::actsAs($model, ['param1' => 'value1']);
 		$this->assertEqual('New York reached in 1h54.', MockPost::modelFly('New York'));
 	}
 
 	public function testCall() {
 		$model = 'li3_behaviors\tests\mocks\data\behavior\MockFlyBehavior';
-		MockPost::actsAs($model, array('param1' => 'value1'));
+		MockPost::actsAs($model, ['param1' => 'value1']);
 		$entity = MockPost::create();
 		$this->assertEqual('Las Vegas reached in 1h24.', $entity->entityFly('Las Vegas'));
 	}

@@ -12,8 +12,8 @@ use lithium\core\Libraries;
  * This adds the `'behavior'` type to the list of recognized class types. You can look up the
  * behaviors available to your application by running `Libraries::locate('behavior')`.
  */
-Libraries::paths(array(
-	'behavior' => array('{:library}\extensions\data\behavior\{:name}')
-));
+Libraries::paths([
+	'behavior' => ['{:library}\extensions\data\behavior\{:name}']
+]);
 
 ?>
