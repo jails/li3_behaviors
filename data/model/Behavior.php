@@ -15,12 +15,14 @@ class Behavior extends \lithium\core\Object {
 	 *
 	 * @var array
 	 */
-	protected $_config = [];
+	protected $_defaults = [];
+
 	/**
 	 * @see lithium\core\Object::_autoConfig
 	 * @var array
 	 */
-	protected $_autoConfig = ['model', 'config'];
+	protected $_autoConfig = ['model'];
+
 	/**
 	 * Hold the fully namespaced class name of the model
 	 *
@@ -36,7 +38,7 @@ class Behavior extends \lithium\core\Object {
 	 * @param \lithium\data\Model $self The Model using this behaviour
 	 */
 	public function __construct($config = []) {
-		parent::__construct($config);
+		parent::__construct($config + $this->_defaults);
 	}
 
 	/**
