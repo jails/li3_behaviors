@@ -13,7 +13,7 @@ use li3_behaviors\data\model\Behavior;
 class BehaviorTest extends \lithium\test\Unit {
 
 	public function testConfig() {
-		$behavior = new Behavior(['config' => ['test1' => 'value1']]);
+		$behavior = new Behavior(['test1' => 'value1']);
 		$this->assertEqual('value1', $behavior->config('test1'));
 
 		$behavior->config(['test2' => 'value2']);
