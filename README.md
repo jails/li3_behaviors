@@ -52,14 +52,12 @@ use lithium\util\Inflector;
 
 class Slug extends \li3_behaviors\data\model\Behavior {
 
-	/**
-	 * Default field names to slug
-	 *
-	 * @var array
-	 */
-	protected $_defaults = array(
-		'fields' => ['label' => 'slug']
-	);
+	public function __construct(array $config = []) {
+		$defaults = [
+			'fields' => ['label' => 'slug']
+		];
+		parent::__construct($config + $defaults);
+	}
 
 	protected function _init() {
 		parent::_init();

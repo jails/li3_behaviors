@@ -11,13 +11,6 @@ namespace li3_behaviors\data\model;
 class Behavior extends \lithium\core\Object {
 
 	/**
-	 * Holding the configuration array of the behavior
-	 *
-	 * @var array
-	 */
-	protected $_defaults = [];
-
-	/**
 	 * @see lithium\core\Object::_autoConfig
 	 * @var array
 	 */
@@ -29,17 +22,6 @@ class Behavior extends \lithium\core\Object {
 	 * @var string
 	 */
 	protected $_model = null;
-
-	/**
-	 * Bind
-	 *
-	 * Applies Behaviour to the Model and configures its use
-	 *
-	 * @param \lithium\data\Model $self The Model using this behaviour
-	 */
-	public function __construct($config = []) {
-		parent::__construct($config + $this->_defaults);
-	}
 
 	/**
 	 * Sets/Gets the configuration for this behavior
